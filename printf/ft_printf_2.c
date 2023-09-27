@@ -2,7 +2,6 @@
 #include <unistd.h> // For malloc, free, write
 #include <stdio.h>
 
-/* printf 72 lines */
 int	ft_string(char *str)
 {
 	int	i = -1;
