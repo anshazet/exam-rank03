@@ -2,7 +2,6 @@
 #include <unistd.h> // For malloc, free, write
 #include <stdio.h>
 
-/* my printf passed grademe */
 int	ft_putchar_printf(char a)
 {
 	return (write(1, &a, 1));
