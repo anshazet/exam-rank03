@@ -11,22 +11,22 @@ int	ft_string (char *str)
 	while (str[++i])
 		write(1, &str[i], 1);
 	return (i);
-}													//len_base argument specifies the base for the conversion
-//int min!											//c argument represents the format specifier character that indicates the type of conversion to be performed
-int ft_type_dx (long long nbr, char c, int len_base) //nbr number that needs to be converted to a string
+}							//len_base argument specifies the base for the conversion
+							//c argument represents the format specifier character that indicates the type of conversion to be performed
+int ft_type_dx (long long nbr, char c, int len_base) 	//nbr number that needs to be converted to a string
 {
-    char    *base;
-	int		len;
+	char    *base;
+	int	len;
 
     if (c == 'd' || c == 'x')
         base = "0123456789abcdef";
 	if (nbr == -2147483648)
 		return (write(1, "-2147483648", 11));
 	len = 0;
-    if (nbr < 0)									// Handle negative numbers
+    if (nbr < 0)							// Handle negative numbers
     {
         len += write(1, "-", 1);					// Write "-" to stdout and update the character count
-        nbr = nbr * (-1);							// Make the number positive for processing
+        nbr = nbr * (-1);						// Make the number positive for processing
     }
     if (nbr > (len_base - 1))						// Convert the number to a string representation
     {
@@ -35,7 +35,7 @@ int ft_type_dx (long long nbr, char c, int len_base) //nbr number that needs to 
     }
     else
         len += write(1, &base[nbr], 1);
-    return (len);									// Return the total number of characters written
+    return (len);							// Return the total number of characters written
 }
 
 int	ft_printf(const char *str, ...)
